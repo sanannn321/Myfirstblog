@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Life Tips - Your Guide to Better Living</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom CSS Styles */
+        :root {
+            --primary-color: #28a745;
+            --secondary-color: #6c757d;
+            --accent-color: #ffc107;
+            --dark-color: #343a40;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            color: var(--primary-color) !important;
+            font-size: 1.5rem;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-custom {
+            background-color: var(--accent-color);
+            border: none;
+            color: var(--dark-color);
+            font-weight: bold;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #e0a800;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-card img {
+            border-radius: 15px 15px 0 0;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .btn-buy {
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            font-weight: bold;
+            border-radius: 25px;
+            padding: 10px 25px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-buy:hover {
+            background-color: #218838;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark-color);
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+        }
+
+        .blog-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .blog-meta {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 40px 0 20px;
+        }
+
+        .footer h5 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--primary-color);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        /* Additional styling for better product display */
+        .product-card .card-text {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 100px;
+        }
+
+        .product-features {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .product-features ul {
+            margin-bottom: 0;
+        }
+
+        .product-features li {
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat"></i> Healthy Life Tips
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h1><i class="fas fa-leaf"></i> Welcome to Healthy Life Tips</h1>
+                    <p>Discover the best products, tips, and resources to transform your health and fitness journey. Start living your healthiest life today!</p>
+                    <a href="#products" class="btn btn-custom btn-lg">
+                        <i class="fas fa-shopping-cart"></i> Shop Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section id="products" class="py-5">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-star"></i> Featured Products</h2>
+                <p>Hand-picked products to support your health and fitness goals</p>
+            </div>
+            <div class="row g-4">
+                <!-- Product 1: NutraBio Whey Protein -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card product-card">
+                        <img src="61cP36f9GcL._AC_SX425_.jpg" alt="NutraBio 100% Whey Protein Isolate" width="300" height="200">
+
+                        <div class="card-body text-center">
+                            <h5 class="card-title">NutraBio 100% Whey Protein Isolate</h5>
+                            <p class="card-text">Pure, powerful, and perfect for your fitness goals! Get 25g of clean protein per serving with zero compromises on quality.</p>
+                            
+                            <div class="product-features">
+                                <ul class="list-unstyled text-start">
+                                    <li><i class="fas fa-check text-success me-2"></i> 25g pure protein per serving</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Non-GMO, Soy-Free, Gluten-Free</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Lab-tested for purity</li>
+                                    <li><i class="fas fa-check text-success me-2"></i> Unflavored 5 lbs pack</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-3">
+                                <span class="text-warning">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </span>
+                                <small class="text-muted">(4.4/5)</small>
+                            </div>
+                            <h4 class="text-success mb-3">$109.99</h4>
+                            <a href="https://amzn.to/4l8seVL" class="btn btn-buy" target="_blank">
+                                <i class="fas fa-shopping-cart"></i> Buy on Amazon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+               <!-- Product 2: Hooga Red Light Therapy -->
+<div class="col-lg-4 col-md-6">
+    <div class="card product-card">
+        <img src="51oHuE1ch5L._AC_SY450_.jpg" alt="Hooga Red Light Therapy Blanket" class="card-img-top">
+        <div class="card-body text-center">
+            <h5 class="card-title">Hooga Red Light Therapy Blanket</h5>
+            <p class="card-text">Full-body wellness solution for pain relief, better sleep, and cellular healing from the comfort of your home.</p>
+            
+            <div class="product-features">
+                <ul class="list-unstyled text-start">
+                    <li><i class="fas fa-check text-success me-2"></i> 2,680 triple chip LEDs</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Full body coverage (71x32x12)</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Pulse mode & timer</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Lightweight & flexible</li>
+                </ul>
+            </div>
+
+            <div class="mb-3">
+                <span class="text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+                <small class="text-muted">(3.9/5)</small>
+            </div>
+            <h4 class="text-success mb-3">$1,399.00</h4>
+            <a href="https://amzn.to/4ldqmLu" class="btn btn-buy" target="_blank">
+                <i class="fas fa-shopping-cart"></i> Buy on Amazon
+            </a>
+        </div>
+    </div>
+</div>
+
+                <!-- Product 3: MaxxMMA Speed Bag -->
+<div class="col-lg-4 col-md-6">
+    <div class="card product-card">
+        <img src="image.jpg.jpg" alt="MaxxMMA Speed Bag Platform Kit" class="card-img-top">
+        <div class="card-body text-center">
+            <h5 class="card-title">MaxxMMA Speed Bag Platform Kit</h5>
+            <p class="card-text">Train like a pro from home! Complete boxing training solution with adjustable platform and professional accessories.</p>
+            
+            <div class="product-features">
+                <ul class="list-unstyled text-start">
+                    <li><i class="fas fa-check text-success me-2"></i> Adjustable height platform</li>
+                    <li><i class="fas fa-check text-success me-2"></i> 24" diameter, heavy-duty build</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Complete kit with accessories</li>
+                    <li><i class="fas fa-check text-success me-2"></i> Easy wall mount setup</li>
+                </ul>
+            </div>
+
+            <div class="mb-3">
+                <span class="text-warning">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </span>
+                <small class="text-muted">(4.4/5)</small>
+            </div>
+            <h4 class="text-success mb-3">$199.99</h4>
+            <a href="https://amzn.to/4lqG5qU" class="btn btn-buy" target="_blank">
+                <i class="fas fa-shopping-cart"></i> Buy on Amazon
+            </a>
+        </div>
+    </div>
+</div>
+
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-blog"></i> Latest Health Tips</h2>
+                <p>Expert advice and insights to help you on your wellness journey</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100">
+                    <img src="image.jpg.jpg" alt="MaxxMMA Speed Bag Platform Kit" class="card-img-top">
+                        <div class="card-body">
+                            <div class="blog-meta mb-2">
+                                <i class="fas fa-calendar"></i> August 7, 2025
+                            </div>
+                            <h5 class="card-title">Build Your Home Boxing Gym</h5>
+                            <p class="card-text">Learn how to set up a professional boxing training space at home with the right equipment and safety considerations.</p>
+                            <a href="https://amzn.to/4lqG5qU" class="btn btn-outline-success">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100">
+                          <img src="51oHuE1ch5L._AC_SY450_.jpg" alt="Hooga Red Light Therapy Blanket" class="card-img-top">
+                        <div class="card-body">
+                            <div class="blog-meta mb-2">
+                                <i class="fas fa-calendar"></i> August 6, 2025
+                            </div>
+                            <h5 class="card-title">Benefits of Red Light Therapy</h5>
+                            <p class="card-text">Discover the science behind red light therapy and how it can improve your recovery, sleep, and overall wellness.</p>
+                            <a href="https://amzn.to/4ldqmLu" class="btn btn-outline-success">Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card blog-card h-100">
+                          <img src="61cP36f9GcL._AC_SX425_.jpg" alt="NutraBio 100% Whey Protein Isolate" width="250" height="200">
+                        <div class="card-body">
+                            <div class="blog-meta mb-2">
+                                <i class="fas fa-calendar"></i> August 8, 2025
+                            </div>
+                            <h5 class="card-title">Choosing the Right Protein Supplement</h5>
+                            <p class="card-text">A comprehensive guide to selecting high-quality protein supplements that match your fitness goals and dietary needs.</p>
+                            <a href="https://amzn.to/4l8seVL" class="btn btn-outline-success">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h2 class="mb-4">About Healthy Life Tips</h2>
+                    <p class="lead">We're passionate about helping people achieve their health and fitness goals through carefully curated products and expert advice.</p>
+                    <p>Our team of health enthusiasts and fitness experts works tirelessly to research and recommend only the best products that can make a real difference in your wellness journey. We believe that everyone deserves access to quality health resources and products that actually work.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Expert-curated product recommendations</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Evidence-based health advice</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Honest and transparent reviews</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i> Community-focused approach</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6">
+                   <img src="image.jpg.jpg" alt="MaxxMMA Speed Bag Platform Kit" class="card-img-top">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-title">
+                <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+                <p>Have questions? We'd love to hear from you!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-custom btn-lg">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5><i class="fas fa-heartbeat"></i> Healthy Life Tips</h5>
+                    <p>Your trusted source for health and fitness products and advice. Join thousands of others on their journey to better health.</p>
+                    <div>
+                        <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Categories</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Fitness Equipment</a></li>
+                        <li><a href="#">Supplements</a></li>
+                        <li><a href="#">Healthy Food</a></li>
+                        <li><a href="#">Wellness</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Support</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Affiliate Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="mb-0">&copy; 2024 Healthy Life Tips. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 text-end">
+                    <p class="mb-0">Made with <i class="fas fa-heart text-danger"></i> for your health</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Simple validation
+            if (name && email && subject && message) {
+                alert('Thank you for your message! We\'ll get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+
+        // Add active class to navigation items on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
